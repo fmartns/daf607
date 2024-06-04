@@ -104,19 +104,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             transform: scaleX(-1);
             z-index: -1;
         }
-        .title {
-            color: #0e3d69;
+        .container {
+            background-color: #1d6fbc;
+            color: white;
+            border-radius: 5px;
+            padding: 30px;
+            margin-top: 40px;
         }
         .upload-area {
-            border: 2px dashed #007bff;
             border-radius: 5px;
+            color: #999e9d;
             padding: 30px;
             text-align: center;
             cursor: pointer;
-            background-color: #f8f9fa;
+            background-color: #fff;
         }
         .upload-area.dragover {
             background-color: #f1f1f1;
+        }
+        .modal {
+            color: black;
         }
         footer {
             position: fixed;
@@ -130,14 +137,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 <div class="container">
-    <div class="text-center my-4">
-        <img src="https://bauhaussistemas.com.br/wp-content/uploads/2022/07/Ativo-1-8.png" alt="Logo" style="max-width: 200px;">
-    </div>
     <h4 class="my-4 text-center title">Informe o exercicio e envie o arquivo DAF607 (.ret)</h4>
     <form id="uploadForm" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="year">Ano:</label>
-            <input type="text" name="year" id="year" class="form-control" required>
+            <input type="text" name="year" id="year" class="form-control" placeholder="Digite o exercicio desejado" required>
         </div>
         <div class="form-group">
             <label for="file">Arquivo .ret:</label>
@@ -147,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="file" name="file" id="file" class="form-control-file" accept=".ret" style="display: none;" required>
             <div id="fileName" class="mt-2"></div>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+        <button type="submit" class="btn btn-success">Enviar</button>
     </form>
 
     <!-- Modal -->
@@ -172,7 +176,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </div>
 
-<footer class="bg-light text-center py-3">
+<footer class="bg-transparent text-center py-3">
+    <div class="text-center my-4">
+        <img src="https://bauhaussistemas.com.br/wp-content/uploads/2022/07/Ativo-1-8.png" alt="Logo" style="max-width: 200px;">
+    </div>
     &copy; 2024 Bauhaus Sistemas. Todos os direitos reservados.
 </footer>
 
