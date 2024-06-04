@@ -88,25 +88,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Processar Arquivo DAF607</title>
+    <title>DAF607 | Bauhaus Sistemas</title>
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/o6zfZZr.png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('https://i.imgur.com/wHLvvt3.jpeg');
+            background-repeat: no-repeat;
+            transform: scaleX(-1);
+            z-index: -1;
+        }
+        .title {
+            color: #0e3d69;
+        }
         .upload-area {
             border: 2px dashed #007bff;
             border-radius: 5px;
             padding: 30px;
             text-align: center;
             cursor: pointer;
+            background-color: #f8f9fa;
         }
         .upload-area.dragover {
             background-color: #f1f1f1;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h2 class="my-4">Envie o arquivo DAF607 (.ret) e escolha um ano</h2>
+    <div class="text-center my-4">
+        <img src="https://bauhaussistemas.com.br/wp-content/uploads/2022/07/Ativo-1-8.png" alt="Logo" style="max-width: 200px;">
+    </div>
+    <h4 class="my-4 text-center title">Informe o exercicio e envie o arquivo DAF607 (.ret)</h4>
     <form id="uploadForm" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="year">Ano:</label>
@@ -120,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="file" name="file" id="file" class="form-control-file" accept=".ret" style="display: none;" required>
             <div id="fileName" class="mt-2"></div>
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
     </form>
 
     <!-- Modal -->
@@ -135,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 <div class="modal-body">
                     <p>Processamento concluído. Arquivos gerados:</p>
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-around">
                         <a href="#" id="downloadRet" download class="btn btn-success mx-1">Download RET Corrigido</a>
                         <a href="#" id="downloadTxt" download class="btn btn-success mx-1">Download TXT</a>
                     </div>
@@ -144,6 +171,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </div>
+
+<footer class="bg-light text-center py-3">
+    &copy; 2024 Bauhaus Sistemas. Todos os direitos reservados.
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
