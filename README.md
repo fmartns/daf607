@@ -6,5 +6,4 @@ Este algoritmo foi desenvolvido para realizar o filtro do arquivo DAF607, confor
 
 ## Screenshot
 
-![App Screenshot](https://i.imgur.com/xLkBYOl.png)
-
+![App Screenshot](https://i.imgur.com/p9KHgvg.png)
